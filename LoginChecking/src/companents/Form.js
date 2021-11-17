@@ -27,13 +27,13 @@ function Form() {
    
    //contitions
     if (name === "Nebuchadnezzar" && password === "12345") {
-     setText("ad ve sifre hack edildi")
+     setText("Ad və şifrə hack olundu.")
     }
     else if (name === "Nebuchadnezzar" && password !== "12345") {
-      setText("ad  hack edildi")
+      setText("Yalnızca ad hack olundu.")
     } 
     else if (password === "12345" && name !=="Nebuchadnezzar") {
-      setText("sifre  hack edildi")
+      setText("Yalnızca şifrə hack olundu.")
     }
     else {
       setText("")
@@ -45,10 +45,10 @@ function Form() {
   // JSX 
   return (
     <>
-    <form onSubmit={submit}>
-      <div className="form-group">
-        <h1>{text}</h1>
-        <input ref={nameRef}
+    <form onSubmit={submit} >
+      <div className="form-group" style={{padding:"5rem 0",width:"350px",margin:"auto"}}>
+        <h1 style={{color:"white",textAlign:"center", margin:"15px 0"}}>{text}</h1>
+        <input ref={nameRef} 
           type="text"
           name="name"
           className="form-control mb-4"
@@ -65,7 +65,7 @@ function Form() {
         <input
           type="submit"
           value="Submit"
-          className="btn btn-warning form-control mt-2"
+          className="btn btn-danger form-control mt-2"
         />
       </div>
     </form>
