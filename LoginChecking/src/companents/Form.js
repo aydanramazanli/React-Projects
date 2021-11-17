@@ -1,45 +1,42 @@
-import react, { useEffect, useState } from "react";
+import react, { useEffect, useState,useRef } from "react";
 
 function Form() {
   // Usestate
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const[text, setText]=useState("")
+  const nameRef=useRef(null)
+  const passRef= useRef(null)
 
   const submit = (e) => {
-    e.preventDefault();
-    setName(e.target["name"].value);
-    setPassword(e.target["password"].value);
+    e.preventDefault()
+    //ref values
+    const nameInput=nameRef.current.value
+    const passInput= passRef.current.value
+
+    setName(nameInput);
+    setPassword(passInput);
     // save value
-    console.log(e.target["name"].value);
-    console.log(e.target["password"].value);
+    console.log(nameInput.value);
+    console.log(passInput.value);
   };
 
 
 // UseEffect
   useEffect(() => {
-    //variables
-    let h1 = document.querySelector("h1");
-    let nameHacking= document.querySelector(".nameHack")
-    let passHacking= document.querySelector(".passHack")
    
    //contitions
     if (name === "Nebuchadnezzar" && password === "12345") {
-      h1.innerHTML = "sifre ve name Hack olundu";
-      passHacking.innerHTML=""
-      nameHacking.innerHTML=""
+     setText("ad ve sifre hack edildi")
     }
     else if (name === "Nebuchadnezzar" && password !== "12345") {
-      h1.innerHTML = "";
-      nameHacking.innerHTML="name hack olundu"
+      setText("ad  hack edildi")
     } 
     else if (password === "12345" && name !=="Nebuchadnezzar") {
-      h1.innerHTML = "";
-      passHacking.innerHTML="password hack olundu"
+      setText("sifre  hack edildi")
     }
     else {
-     h1.innerHTML=""
-     passHacking.innerHTML=""
-     nameHacking.innerHTML=""
+      setText("")
     }
   }, [name, password]);
 
@@ -50,17 +47,15 @@ function Form() {
     <>
     <form onSubmit={submit}>
       <div className="form-group">
-        <h1></h1>
-        <h3 className="nameHack"></h3>
-        <h3 className="passHack"></h3>
-        <input
+        <h1>{text}</h1>
+        <input ref={nameRef}
           type="text"
           name="name"
           className="form-control mb-4"
           placeholder="Name"
         />
        
-        <input
+        <input ref={passRef}
           type="password"
           name="password"
           className="form-control mb-4"
