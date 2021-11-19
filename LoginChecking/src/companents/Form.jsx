@@ -1,10 +1,10 @@
-import react, { useEffect, useState,useRef } from "react";
+import react,{useState, useEffect,useRef} from "react";
 
 function Form() {
   // Usestate
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const[text, setText]=useState("")
+  const[text, setText]=react.useState("")
   const nameRef=useRef(null)
   const passRef= useRef(null)
 
@@ -16,9 +16,6 @@ function Form() {
 
     setName(nameInput);
     setPassword(passInput);
-    // save value
-    console.log(nameInput.value);
-    console.log(passInput.value);
   };
 
 
