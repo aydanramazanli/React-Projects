@@ -4,7 +4,7 @@ import react from "react";
 function News({img, title, text}){
     
     return (
-    <div>
+    <div >
         <div>
              <img src={img} alt=""  />
         </div>
