@@ -6,7 +6,7 @@ import Title from "./Title";
 import Modal from "./Modal";
 import Loading from "./Loading";
 
-function Header() {
+function Main() {
   const [list, setList] = useState([
     {
       img: "https://ichef.bbc.co.uk/wwhp/304/ibroadcast/images/live/p0/b4/t2/p0b4t2nt.jpg",
@@ -58,9 +58,9 @@ const modalHandler=(params)=>{
  setTimeout(()=>{
    const data = news[params]
    setInfo(data)
-   setLoading(true)
+ 
  },2000)
-
+ setLoading(true)
   }
 
 useEffect(()=>{
@@ -104,10 +104,11 @@ useEffect(()=>{
           </div>
         ))}
       </div>
+      {loading && <Loading />}
      {modal && <Modal  {...info}  closeModal={setModal}/>}
-{loading && <Loading />}
+
     </div>
   );
 }
 
-export default Header;
+export default Main;
