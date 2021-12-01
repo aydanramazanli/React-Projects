@@ -8,7 +8,7 @@ import '../Css/Navbar.css'
 export default function Navbar() {
     return (
         <div className="fixed w-full navbar z-10">
-        <div className="flex container mx-auto py-5 place-items-center justify-between " >
+        <div className="flex container mx-auto p-5 place-items-center justify-between " >
 
             <div className="navbar-left"> 
             <div className="logo" style={{width: '70%'}}>
