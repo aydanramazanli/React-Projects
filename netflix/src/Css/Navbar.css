@@ -1,0 +1,26 @@
+.navbar{
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #080b0e, transparent);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #080b0e, transparent); /* ChromeW3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    
+
+}
+.navbar-pic-arrow:hover{
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
+}
+.navbar-right{
+    width: 22rem;
+}
+.fa-search:hover{
+transform:scale(1.2);
+transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (min-width: 322px) and (max-width: 959px){
+.search{
+    display: none;
+}
+.navbar-right{justify-content: flex-end;}
+    }

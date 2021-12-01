@@ -1,0 +1,34 @@
+.banner-img{
+    height:40rem;
+    background:url("https://occ-0-2774-2773.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbhAVu_8XArGfZYDHUs-UVBztb6aZZuHrk1PwJlZ7NO_2gxWhc0xqtdMc2Ye9VJ35FjKVuoTBihu0fNPxtq6IGVzwB8V.webp?r=090");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner-img img{
+    height:100%;
+}
+
+.detail{
+    width: 650px;
+    z-index: 3;
+    position: relative;
+
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;height: 100%;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #07070765, transparent);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #07070765, transparent); 
+    z-index: 2;
+}
+.fragman:hover{
+    background:rgb(224, 224, 224);
+    transition: 0.3s ease-in-out;
+}
+
+.movie-details:hover{
+background: rgb(209, 213, 219,0.3);
+transition: 0.3s ease-in-out;
+}
