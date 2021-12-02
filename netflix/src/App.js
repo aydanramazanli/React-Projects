@@ -3,6 +3,7 @@ import './App.css';
 import Banner from './Companents/Banner';
 import Navbar from './Companents/Navbar';
 import MovieList from './Companents/MovieList';
+import Footer from './Companents/Footer';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <Navbar/>
     <Banner/>
     <MovieList/>
+    <Footer/>
     </div>
   );
 }
