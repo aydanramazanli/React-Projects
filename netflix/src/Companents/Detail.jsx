@@ -1,14 +1,9 @@
-import React from "react";
+import React from 'react'
 
-
-
-export default function Movie({ category, movies }) {
-  return (
-    <>
-   <div className="py-2">
-      <h2 className="text-gray-50 text-2xl font-bold my-3">{category}</h2>
-    </div>
- 
+export default function Detail({movies}) {
+    return (
+        <div>
+             <>
     <div className=" movies  grid grid-cols-5 w-full gap-3" style={{ height: "150px" }}>
        {movies.map((info)=>{
          
@@ -24,7 +19,7 @@ export default function Movie({ category, movies }) {
            )
        } )}
     </div>
-  
     </>
-  );
+        </div>
+    )
 }

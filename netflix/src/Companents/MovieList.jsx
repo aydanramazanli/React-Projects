@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Css/MovieList.css";
 import Movie from "./Movie";
 import shortid from "shortid";
+import Detail from "./Detail";
 
 export default function MovieList() {
   const [data, setData] = useState([{ category: "Action", 
@@ -122,6 +123,7 @@ return(
    {
      data.map(i=>(<Movie key={shortid()} category={i.category} movies={i.movies}/>))
    }
+ 
  </div>
 )
 }

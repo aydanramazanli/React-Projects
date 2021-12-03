@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../Images/logo.png'
 import "../Css/Footer.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
@@ -13,7 +14,7 @@ export default function Footer() {
               <h3> ©2021. All Rights Reserved</h3> 
                 </div>
                 <div className="github" >
-                 <a href="#" className="githubLink"> Github</a>  
+                 <Link to="#" className="githubLink"> Github</Link>  
                 </div>
             </div>
         </div>
