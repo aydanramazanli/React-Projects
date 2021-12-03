@@ -7,16 +7,16 @@ import Step4 from "./Step4";
 const plans = [
   {
     id: 0,
-    plans: "Basic",
+    name: "Basic",
   },
-  { id: 1, plans: "Standart" },
-  { id: 2, plans: "Premium" },
+  { id: 1, name: "Standart" },
+  { id: 2, name: "Premium" },
 ];
 
 export default function Register() {
   const [step, setStep] = useState(1);
   const [name, setName] = useState();
-  const [step2Check, setStep2Check] = useState(null)
+  const [step2Check, setStep2Check] = useState(-1)
 
   //function next step
   const Step = () => {
@@ -39,7 +39,7 @@ export default function Register() {
         <Step2
           onClick={() => {
             Step();
-          }} plans={plans}
+          }} plans={plans} step={step2Check} setState={setStep2Check}
         />
       );
     } else if (step === 3) {
@@ -57,10 +57,10 @@ export default function Register() {
 
   // step 2 chek for plan
 const checkPlans=()=>{
-  if(step2Check===null){
+  if(step2Check=== -1){
     alert('Please choose any plans')
   }
-  else{
+  else if(step2Check===2){
     setStep(step+1)
   }
 }
