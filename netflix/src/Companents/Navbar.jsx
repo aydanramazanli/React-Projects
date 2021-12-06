@@ -27,15 +27,16 @@ export default function Navbar() {
                 <i class="fas fa-search text-gray-100 text-xl px-4"></i>
              
                 </div>
-                <div className="prof-img flex items-center">
+
+                {/* <div className="prof-img flex items-center">
                     <img src={ppImg} alt="profil image" className="rounded" />
                     <i class="navbar-pic-arrow fas fa-caret-down  text-gray-50 flex items-center px-4"></i>
-                </div>
+                </div> */}
                 <Link to={{
-                    pathname:`${location==null}`? "/registeration" : "/"
+                    pathname:`${location===null}`? "/registeration" : "/"
 
-                }} className="register  text-gray-50">
-                    <a href="">Register</a>
+                }} className="register  text-red-600 font-bold">
+                   Register
                     
                 </Link>
             </div>

@@ -123,7 +123,8 @@ return(
    {
      data.map(i=>(<Movie key={shortid()} category={i.category} movies={i.movies}/>))
    }
- 
+    
+
  </div>
 )
 }

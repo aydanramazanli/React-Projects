@@ -5,5 +5,9 @@
 transform: scale(1.6);
 z-index: 1000;
 transition:all 0.3s ease-in-out;
-
+}
+.movieInfo{ opacity: 0;}
+.movie-item:hover .movieInfo{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
 }

@@ -3,11 +3,11 @@ import "..//../Css/Registration.css"
 import shortid from 'shortid'
 
 
-export default function Step2({plans, step, onClick, setstate}) {
-    console.log(plans)
+export default function Step2({plans, step,onClick, setState}) {
+  
     return (
-        <div className="container mx-auto">
-        <div className="register__slide__two">
+        <div className="container mx-auto " style={{paddingTop:"5rem"}}>
+        <div className="register__slide__two mx-auto" style={{width:"80%"}}>
         <div className="register__slide__steps" >
             <span>STEP </span>
             <strong>2 </strong>
@@ -22,11 +22,11 @@ export default function Step2({plans, step, onClick, setstate}) {
         </p>
         <div className="package__boxes">
             <div className="package__boxes__fill"></div>
-            <div className="package__boxes__items">
-                {plans.map((e, i) => <div key={shortid.generate()} className="package__boxes__item" onClick={() => setstate(i)}><span>{e.name}</span></div>) }
+            <div className="package__boxes__items"> 
+                {plans.map((element, i) => <div key={shortid.generate()} style={element.id===step? {background:"red"}:null } className="package__boxes__item" onClick={() => setState(i)}><span>{element.name}</span></div>) }
             </div>
         </div>
-        <div className="package__item" >
+        <div className="package__item"  style={{ color: "#e5e5e5" }}>
             <div className="package__first__item"><span>Monthly price after free month ends</span></div>
             <div className="package__items" >
                 <p className="package__items__basic" >$7.99</p>
@@ -34,7 +34,7 @@ export default function Step2({plans, step, onClick, setstate}) {
                 <p className="package__items__premium" >$13.99</p>
             </div>
         </div>
-        <div className="package__item" style={{ color: "#e5e5e5" }}>
+        <div className="package__item"  style={{ color: "#e5e5e5" }}>
             <div className="package__first__item"><span>HD available</span></div>
             <div className="package__items" >
                 <p className="package__items__basic" >No</p>
@@ -42,7 +42,7 @@ export default function Step2({plans, step, onClick, setstate}) {
                 <p className="package__items__premium" >Yes</p>
             </div>
         </div>
-        <div className="package__item">
+        <div className="package__item" style={{ color: "#e5e5e5" }}>
             <div className="package__first__item"><span>Ultra HD available</span></div>
             <div className="package__items" >
                 <p className="package__items__basic" >No</p>
@@ -58,7 +58,7 @@ export default function Step2({plans, step, onClick, setstate}) {
                 <p className="package__items__premium" >4</p>
             </div>
         </div>
-        <div className="package__item" >
+        <div className="package__item"  style={{ color: "#e5e5e5" }}>
             <div className="package__first__item"><span>Watch on your laptop, TV, phone and tablet</span></div>
             <div className="package__items" >
                 <p className="package__items__basic" >Yes</p>
@@ -74,7 +74,7 @@ export default function Step2({plans, step, onClick, setstate}) {
                 <p className="package__items__premium" >Yes</p>
             </div>
         </div>
-        <div className="package__item" >
+        <div className="package__item"  style={{ color: "#e5e5e5" }}>
             <div className="package__first__item"><span>Cancel anytime</span></div>
             <div className="package__items" >
                 <p className="package__items__basic" >Yes</p>

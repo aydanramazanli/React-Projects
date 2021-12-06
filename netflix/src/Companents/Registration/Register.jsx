@@ -16,13 +16,21 @@ const plans = [
 export default function Register() {
   const [step, setStep] = useState(1);
   const [name, setName] = useState();
-  const [step2Check, setStep2Check] = useState(-1)
+  const [step2Check, setStep2Check] = useState(-1);
 
   //function next step
   const Step = () => {
     setStep(step + 1);
   };
 
+  // step 2 chek for plan
+  const checkPlans = () => {
+    if (step2Check === -1) {
+      alert("Please choose any plans");
+    } else  {
+      setStep(step + 1);
+    }
+  };
 
   // 4 companent step
   const Steps = () => {
@@ -36,11 +44,7 @@ export default function Register() {
       );
     } else if (step === 2) {
       return (
-        <Step2
-          onClick={() => {
-            Step();
-          }} plans={plans} step={step2Check} setState={setStep2Check}
-        />
+        <Step2 onClick={() => { checkPlans() }} plans={plans} step={step2Check} setState={setStep2Check}/>
       );
     } else if (step === 3) {
       return (
@@ -48,23 +52,13 @@ export default function Register() {
           onClick={() => {
             Step();
           }}
+          setName={setName}
         />
       );
     } else if (step === 4) {
-      return <Step4 firstname={name} />;
+      return <Step4 name={name} planName={plans[step2Check].name} />;
     }
   };
-
-  // step 2 chek for plan
-const checkPlans=()=>{
-  if(step2Check=== -1){
-    alert('Please choose any plans')
-  }
-  else if(step2Check===2){
-    setStep(step+1)
-  }
-}
-
 
   return <div>{Steps()}</div>;
 }
