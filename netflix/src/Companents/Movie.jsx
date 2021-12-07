@@ -17,7 +17,7 @@ export default function Movie({ category, movies}) {
        {movies.map((info)=>{
          
            return (
-             <Link to='/film-detail/'> 
+             <Link to={`film-detail/${info.id}`}> 
                <div className="movie-item relative h-full">
                       <img src={info.img} className="h-full w-full object-cover" />
                       <div className="movieInfo absolute bottom-2 left-4 text-gray-50 font-medium  text-sm" >

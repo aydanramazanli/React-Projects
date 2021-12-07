@@ -101,7 +101,7 @@ useEffect(()=>{
         {news.map((i, index) => (
           <div key={shortid()} onClick={() => modalHandler(index)}>
             <News img={i.img} title={i.title} text={i.text} />
-          </div>
+          </div> 
         ))}
       </div>
       {loading && <Loading />}

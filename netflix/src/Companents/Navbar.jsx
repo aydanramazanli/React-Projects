@@ -28,10 +28,10 @@ export default function Navbar() {
              
                 </div>
 
-                {/* <div className="prof-img flex items-center">
+                 {/* <div className="prof-img flex items-center">
                     <img src={ppImg} alt="profil image" className="rounded" />
                     <i class="navbar-pic-arrow fas fa-caret-down  text-gray-50 flex items-center px-4"></i>
-                </div> */}
+                </div> * */}
                 <Link to={{
                     pathname:`${location===null}`? "/registeration" : "/"
 

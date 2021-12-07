@@ -21,7 +21,7 @@ function App() {
           <Route path="/registeration" exact>
             <Register />
           </Route>
-          <Route path="/film-detail">
+          <Route path="/film-detail/:id">
             <Detail />
           </Route> 
         </Switch>
