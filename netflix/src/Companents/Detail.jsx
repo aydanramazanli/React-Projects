@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Detail({movies}) {
+export default function Detail() {
 
     return(
         <div>

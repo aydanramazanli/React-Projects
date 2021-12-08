@@ -6,7 +6,12 @@
 .banner-img img{
     height:100%;
 }
-
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
 .detail{
     width: 650px;
     z-index: 3;

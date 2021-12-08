@@ -25,7 +25,12 @@
     align-self: center;
     text-align: left;
 }
-
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
 .register__slide__img img {
     max-width: 50px;
     margin-bottom: 20px;

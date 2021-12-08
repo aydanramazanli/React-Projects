@@ -10,14 +10,15 @@ export default function Step3({onClick,setName}) {
 
     const submit=(e)=>{
         e.preventDefault()
+        const error=[]
         const data={
             name:name.current.value,
             lastName:lastName.current.value,
             email:email.current.value,
             password:password.current.value
         }
-        console.log(data.name)
-        const error=[]
+  
+     
 
         if(data.name.length < 4 ){
             error.push('Name length must be minimum 4 characters')

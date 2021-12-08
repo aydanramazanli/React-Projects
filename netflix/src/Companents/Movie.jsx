@@ -1,6 +1,5 @@
 import React, {useLocation}from "react";
 import { Link } from "react-router-dom";
-import shortid from "shortid";
 
 
 

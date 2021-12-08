@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ppImg from "../Images/pp-img.png";
 import logo from "../Images/logo.png";
 import "../Css/Navbar.css";
@@ -8,24 +8,27 @@ function Navbar() {
   const [local, setLocal] = useState(null);
   const [status, setStatus] = useState(false);
   const location = useLocation();
-  const logOut = () => {
-    if (local !== null) {
-      return <span onClick={remove()}>Log Out</span>;
-    }
-  };
 
-  const remove = () => {
+  const logOut = useCallback(() => {
+    if (local !== null) {
+      return <span onClick={remove}>Log Out</span>;
+    }
+  },[local]);
+
+
+
+  const remove = useCallback(() =>{
     window.localStorage.removeItem("data");
-  };
+  },[]);
 
   useEffect(() => {
-    const datas = JSON.parse(localStorage.getItem("data"));
-    setLocal(datas);
-  }, [location]);
+    const locals = JSON.parse(localStorage.getItem("data"));
+    setLocal(locals);
+  }, [location.pathname]);
 
   return (
     <div className="fixed w-full navbar z-10">
-      <div className="flex container mx-auto p-5 place-items-center justify-between ">
+      <div className="flex container mx-auto py-4 place-items-center justify-between ">
         <div className="navbar-left">
           <div className="logo" style={{ width: "70%" }}>
             <NavLink to="/">
@@ -68,7 +71,7 @@ function Navbar() {
                   <i class="navbar-pic-arrow fas fa-caret-down  text-gray-50 flex items-center px-4"></i>
                 </div>
                 <div
-                  className="modal rounded" OnClick
+                  className="m-modal rounded" OnClick
                   style={
                     status !== false
                       ? { display: "block" }
@@ -77,17 +80,17 @@ function Navbar() {
                 >
                   <ul className="flex flex-col text-gray-100 ">
                     <li className="py2 px-1">
-                      <h2>
+                      <h2 className="text-base">
                         {local !== null
                           ? `${local.name + " " + local.lastName}`
                           : " "}
                       </h2>
                     </li>
-                    <li>
+                    <li  className="my-2 text-base">
                       <Link to="/">Add List</Link>
                     </li>
                     <li>
-                      <Link to="/">{logOut()}</Link>
+                      <div className="logOut text-base" style={{cursor:"pointer"}}>{logOut()}</div>
                     </li>
                   </ul>
                 </div>
