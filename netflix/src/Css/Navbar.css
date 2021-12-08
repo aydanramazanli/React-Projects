@@ -6,7 +6,7 @@
     
 
 }
-.navbar-pic-arrow:hover{
+.navbar-pic-arrow:active{
     transform: rotate(180deg);
     transition: all 0.3s ease-in-out;
 }
@@ -26,4 +26,19 @@ color:red;
     display: none;
 }
 .navbar-right{justify-content: flex-end;}
+    }
+
+.modal{
+        position: absolute;
+        width: 180px;
+    right: 2%;
+        top: 90%;
+       text-align: center;
+        font-size: 12px;
+        transition: all .4s ease;
+        padding: 10px 0px 5px 5px;
+        color: #e5e5e5;
+        background-color: rgba(0, 0, 0, .9);
+        border: 1px solid gray;
+        z-index: 3;
     }

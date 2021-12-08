@@ -38,6 +38,7 @@ export default function Step3({onClick,setName}) {
         onClick()
         window.localStorage.setItem("data", JSON.stringify(data))
         setName(data.name)
+       
     }
 
     }
