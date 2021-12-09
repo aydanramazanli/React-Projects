@@ -6,7 +6,7 @@ import Footer from "./Companents/Footer";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from "./Companents/Registration/Register"
-import Detail from "./Companents/Detail";
+
 
 function App() {
   return (
@@ -22,9 +22,10 @@ function App() {
             <Register />
           </Route>
           <Route path="/film-detail/:id">
-            <Detail />
+            {/* <Detail /> */}
           </Route> 
         </Switch>
+   
         <Footer />
       </Router>
     </div>
