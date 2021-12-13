@@ -1,5 +1,7 @@
 import React, {useLocation}from "react";
 import { Link } from "react-router-dom";
+import Carousel from 'react-elastic-carousel';
+import "..//Css/MovieList.css"
 
 
 
@@ -12,14 +14,13 @@ export default function Movie({ category, movies}) {
       <h2 className="text-gray-50 text-2xl font-bold my-3">{category}</h2>
 
     </div>
- 
-    <div className=" movies  grid grid-cols-5 w-full gap-3" style={{ height: "150px" }}>
-       {movies.map((info)=>{
-         
+ <Carousel >
+    <div className="movies z-50 inline-flex flex-nowrap" >
+       {movies?.map((info)=>{
            return (
-             <Link to={`film-detail/${info.id}`}> 
-               <div className="movie-item relative h-full">
-                      <img src={info.img} className="h-full w-full object-cover" />
+             <Link to={`film-detail/${info.id}`} className="movie-link w-52 gap-5"> 
+               <div className="movie-item  h-full">
+                      <img src={info.img} className="h-full w-full  object-cover" />
                       <div className="movieInfo absolute bottom-2 left-4 text-gray-50 font-medium  text-sm" >
                       <h2> Name : {info.name}</h2>
                       <h3> Time : {info.time}</h3>
@@ -31,7 +32,7 @@ export default function Movie({ category, movies}) {
            )
        } )}
     </div>
-  
+    </Carousel>
     </>
   );
 }

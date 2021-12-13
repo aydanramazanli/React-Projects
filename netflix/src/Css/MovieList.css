@@ -1,12 +1,21 @@
 .p-right{
     padding-left: 5rem;
 }
-.movie-item:hover{ 
+.movie-link:hover{ 
 transform: scale(1.6);
 z-index: 1000;
 transition:all 0.3s ease-in-out;
+margin: 0 40px;
 }
+
+/* .movies .movie-item:hover {
+    transform: translate(-70px ,0)!important;
+} */
+
+
 .movieInfo{ opacity: 0;}
+
+
 .movie-item:hover .movieInfo{
     opacity: 1;
     transition: all 0.3s ease-in-out;
@@ -17,3 +26,12 @@ a{
 a:hover{
     text-decoration: none;
 }
+.rec-pagination{ 
+    display: none !important;;
+}
+.movies { 
+    height:160px;
+}
+
+
+
