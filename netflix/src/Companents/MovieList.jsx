@@ -7,6 +7,7 @@ import {MovieData}  from '../App'
 
 
 
+
 export default function MovieList() {
  const {data}= useContext(MovieData)
 
@@ -16,7 +17,10 @@ return(
  <div className="container mx-auto px-4">
 
    {
-     data.map(i=>(<Movie key={shortid()} category={i.category} movies={i.movies}/>))
+     data.map(i=>(
+    
+     <Movie key={shortid()} category={i.category} movies={i.movies}/>))
+  
    }  
 
 

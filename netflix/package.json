@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
+    "@swiper/core": "^0.0.21",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -16,10 +17,16 @@
     "react-responsive-carousel": "^3.2.22",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
     "reactstrap": "^9.0.1",
     "shortid": "^2.2.16",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^6.0.2",
     "web-vitals": "^1.1.2"
   },
+  "tags": [
+    "swiper"
+  ],
   "scripts": {
     "start": "craco start",
     "build": "craco build",

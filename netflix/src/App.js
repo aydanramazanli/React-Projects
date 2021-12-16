@@ -7,6 +7,10 @@ import React, {useState,createContext} from "react";
 import Detail from './Companents/Detail'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from "./Companents/Registration/Register"
+
+
+
+
 //import { MovieData } from "./Companents/Context";
 
 
@@ -162,6 +166,7 @@ function App() {
              <Detail /> 
           </Route> 
         </Switch>
+    
         <Footer />
       </Router>
     
