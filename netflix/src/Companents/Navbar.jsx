@@ -27,10 +27,10 @@ function Navbar() {
   }, [location.pathname]);
 
   return (
-    <div className="fixed w-full navbar z-10">
-      <div className="flex container mx-auto py-4 place-items-center justify-between ">
+    <div className="fixed w-full navbar z-50">
+      <div className="flex container mx-auto py-4 px-6 place-items-center justify-between ">
         <div className="navbar-left">
-          <div className="logo" style={{ width: "70%" }}>
+          <div className="logo z-40" style={{ width: "70%" }}>
             <NavLink to="/">
               <img src={logo} alt="" />
             </NavLink>

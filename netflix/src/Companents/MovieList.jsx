@@ -1,4 +1,4 @@
-import React, { useState,useContext} from "react";
+import React, { useContext} from "react";
 import "../Css/MovieList.css";
 import Movie from "./Movie";
 import shortid from "shortid";
@@ -11,7 +11,7 @@ import {MovieData}  from '../App'
 export default function MovieList() {
  const {data}= useContext(MovieData)
 
-console.log(data)
+// console.log(data)
   
 return(
  <div className="container mx-auto px-4">

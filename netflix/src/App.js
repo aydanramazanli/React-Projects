@@ -8,13 +8,6 @@ import Detail from './Companents/Detail'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from "./Companents/Registration/Register"
 
-
-
-
-//import { MovieData } from "./Companents/Context";
-
-
-
 export const MovieData = createContext({})
 
 
