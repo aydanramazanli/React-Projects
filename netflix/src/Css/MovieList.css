@@ -1,9 +1,8 @@
 .p-right {
   padding-left: 5rem;
 }
-
+.movie-link{height:130px}
 .movies {
-  position: relative;
   transform: translate(0px, 0px);
 }
 .movies .movie-link:hover::after {
@@ -11,7 +10,7 @@
 }
 
 .movie-link:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   object-fit: cover;
   z-index: 1000;
   transition: all 0.4s ease-in-out;
@@ -20,8 +19,6 @@
   border-right: 4px solid black;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  height: 133px;
-  width: 257px;
 }
 
 .movieInfo {
@@ -39,12 +36,12 @@ a:hover {
   text-decoration: none;
 }
 
-.movies {
+/* .movies {
   height: 160px;
-}
+} */
 .movies-section { 
     position: relative;
-    width: 1100px;
+    width: 832px;
     margin: auto;
 }
 
@@ -54,7 +51,7 @@ a:hover {
   height: 160px;
 bottom: 3%;
   z-index: 50;
-  right:  -5%;
+  right:  0%;
   background-color:  rgba(0, 0, 0, 0.404);
 }
 
@@ -63,7 +60,7 @@ bottom: 3%;
   background-color: rgba(0, 0, 0, 0.404);
   position: absolute;
 bottom: 3%;
-left: -5%;
+left: 0%;
   width: 50px;
   height: 160px;
 }
