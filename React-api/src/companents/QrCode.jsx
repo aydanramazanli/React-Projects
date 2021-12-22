@@ -1,9 +1,9 @@
 import React,{useState, useRef, useEffect} from "react";
 
 export default function QrCode() {
-  const [input, setInput]=useState("")
+  const [input, setInput]=useState()
   const [color, setColor] =useState()
-  const [data, setData]=useState()
+  const [data, setData]=useState("Hello world")
   const inputRef=useRef(null)
   
   useEffect(() => {
@@ -17,14 +17,13 @@ export default function QrCode() {
   const btn =(e)=>{
     e.preventDefault()
     const inputValue=inputRef.current.value
-    console.log(inputValue)
+    //console.log(inputValue)
      setInput(inputValue)
-    // console.log(setInput(inputValue))
   }
 
 
   return (
-    <div style={{display:"flex", flexDirection:"column", width:"30%", margin:" 50px auto", height:"100px", justifyContent:"space-between"}}>
+    <div style={{display:"flex", flexDirection:"column", width:"30%", margin:" 50px 20px", height:"100px", justifyContent:"space-between"}}>
 
 <img src={data} alt=""  />
 
