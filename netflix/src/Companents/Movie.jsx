@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "..//Css/MovieList.css";
 
 const style={
-  width:"832px",
+  width:"1250px",
 }
 
 export default function Movie({ category, movies }) {
@@ -13,7 +13,7 @@ let dataLength=movies.length
 
 
 const nextSlider=()=>{
-  if(value > -((dataLength-(dataLength%4)) * 208)){
+  if(value > -((dataLength-(dataLength%4)) * 256)){
     setValue(value-parseFloat(style.width.replace(/\D/g,'')))
   }
 }
@@ -43,7 +43,7 @@ const prevSlider=()=>{
 
             <Link
               to={`film-detail/${info.id}`}
-              className="movie-link w-48 h-48 gap-5 mx-2"
+              className="movie-link w-64 h-48  mx-1.5"
               target="_blank"
             >
               <div className="movie-item h-full">

@@ -41,14 +41,14 @@ a:hover {
 } */
 .movies-section { 
     position: relative;
-    width: 832px;
+    width: 1250px;
     margin: auto;
 }
 
 .next {
   position: absolute;
   width: 50px;
-  height: 160px;
+  height: 130px;
 bottom: 3%;
   z-index: 50;
   right:  0%;
@@ -62,5 +62,5 @@ bottom: 3%;
 bottom: 3%;
 left: 0%;
   width: 50px;
-  height: 160px;
+  height: 130px;
 }
