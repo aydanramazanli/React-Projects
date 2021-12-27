@@ -16,7 +16,7 @@ export default function Image() {
 
     return (
         <div>
-            <div style={{width:"300px", height:"250px"}}>
+            <div style={{width:"300px", height:"250px" , marginTop:"50px"}}>
 <img src={data} alt="" style={{width:"100%", height:"100%", objectFit:"cover"}} />
             </div>
        <button onClick={catImage}>Change Image</button>

@@ -23,7 +23,7 @@ export default function QrCode() {
 
 
   return (
-    <div style={{display:"flex", flexDirection:"column", width:"30%", margin:" 50px 20px", height:"100px", justifyContent:"space-between"}}>
+    <div style={{display:"flex", flexDirection:"column", width:"30%", margin:" 50px 20px", height:"100px"}}>
 
 <img src={data} alt=""  />
 
