@@ -5,10 +5,11 @@ import Covid from './companents/Covid';
 
 function App() {
   return (
-    <div className="App" style={{display:"flex", width:"80%", justifyContent:"space-between", margin:"auto"}}>
+    <div className="App" style={{ width:"80%", margin:"auto"}}>
+        <Covid/>
   <QrCode/>
   <Image/>
-  <Covid/>
+
     </div>
   );
 }

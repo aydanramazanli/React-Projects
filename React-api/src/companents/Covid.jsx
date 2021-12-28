@@ -25,20 +25,20 @@ setData(data)
 }
 
     return (
-        <div>
-       
+        <div >
+       <h1>Covid Information Api</h1>
        <form action="" onSubmit={Submit}>
       <input type="text"  ref={countryName} placeholder="enter country name"  />
-      <button type="submit">Change Information</button>
+      <button type="submit">Submit </button>
        </form>
        
       <div>
-          <h3>Olenlerin sayi : {singleData?.deaths}</h3>
-          <h3>yoluxma sayi : {singleData?.confirmed}</h3>
-          <h3>sagalma sayi : {singleData?.recovered}</h3>
-          <h3>Tarix: {singleData?.updated}</h3>
+          <h3>Deaths : {singleData?.deaths}</h3>
+          <h3>Confirmed : {singleData?.confirmed}</h3>
+          <h3>Recovered: {singleData?.recovered}</h3>
+          <h3>Date: {singleData?.updated}</h3>
       </div>
-
+      <hr style={{width:"100%"}} />
      
         </div>
     )

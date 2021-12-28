@@ -23,12 +23,13 @@ export default function QrCode() {
 
 
   return (
-    <div style={{display:"flex", flexDirection:"column", width:"30%", margin:" 50px 20px", height:"100px"}}>
+    <div style={{display:"flex", flexDirection:"column", margin:"auto", alignItems:"center"}}>
+      <h1>QR code from input value</h1>
 
-<img src={data} alt=""  />
+<img src={data} alt=""  style={{width:"250px", height:"250px"}} />
 
 <form action="" onSubmit={btn}>
-<input ref={inputRef}   type="text" placeholder="typing...." />
+<input ref={inputRef}   type="text" placeholder="typing...." style={{margin:"20px 0"}} />
       <div>
         <label htmlFor="red"> Red</label>
       <input type="radio" id="red" name="red"   value="red" onClick={()=>{setColor("255-0-0")}} />
@@ -38,9 +39,9 @@ export default function QrCode() {
       <input type="radio" id="yellow" name="green"  value="green" onClick={()=>{setColor("0-255-0")}} />
       </div>
      
-      <button >button</button>
+      <button style={{background:"lightgray", padding:"5px 20px",marginTop:"10px" }} >Change</button>
 </form>
-      
+      <hr style={{width:"100%"}} />
     </div> 
   );
 }

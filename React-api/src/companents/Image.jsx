@@ -15,11 +15,13 @@ export default function Image() {
     },[])
 
     return (
-        <div>
-            <div style={{width:"300px", height:"250px" , marginTop:"50px"}}>
+        <div >
+            <h1>Cat Images </h1>
+            <div style={{width:"300px", height:"250px" , margin:"50px auto"}}>
 <img src={data} alt="" style={{width:"100%", height:"100%", objectFit:"cover"}} />
             </div>
        <button onClick={catImage}>Change Image</button>
+       <hr style={{width:"100%"}} />
         </div>
     )
 }
