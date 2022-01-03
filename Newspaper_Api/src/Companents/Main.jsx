@@ -1,42 +1,53 @@
-import React, {useState, useEffect, useRef}from 'react'
+import React, {useState, useEffect, useRef,useCallback}from 'react'
 import shortid from 'shortid';
+import Paginations from './Pagination'
 
 
 export default function Main() {
     const [data, setData]= useState()
     const [page, setPage]=useState(1)
+    const [count, setCount]=useState(1)
     const [terms, setTerms]= useState()
     const nameRef= useRef(null)
+    
 
 
 useEffect(() =>{
-fetch(`https://chroniclingamerica.loc.gov/search/titles/results/?terms=${terms}&format=json&page=${page}`).then(res=>{
+if(data){
+    fetch(`https://chroniclingamerica.loc.gov/search/titles/results/?terms=${data}&format=json&page=${page}`).then(res=>{
     return res.json()
 }).then(data=>{
-    setData(data)
-    console.log(data)
+    setTerms(data.items)
+    setCount(data.totalItems/(data.endIndex - data.startIndex + 1))
+    // console.log(data)
+    // console.log(data.totalItems/(data.endIndex - data.startIndex + 1))
 }).catch(() => {
-    alert("data yoxdur")
+    console.log("data yoxdur")
   })
+}
     
-},[terms,page])
+},[data,page])
+
 
 const getValue=(e)=>{
     e.preventDefault()
-    setTerms(nameRef.current.value)
+    setData(nameRef.current.value)
  }
+
+
 
     return (
         <>
-            <form action="" style={{width: '60%',margin: 'auto'}} >
+      
+            <form action="" style={{width: '50%',margin: '50px auto', display:"flex", justifyContent: 'center'}} >
 
-                <input ref={nameRef} type="text" placeholder="enter word" />
-                <button onClick={getValue}>Submit</button>
+                <input ref={nameRef} type="text" placeholder="enter newspaper title" style={{padding:'5px 10px', border:"2px solid lightgray", outline:"none"}}/>
+                <button style={{margin:"0 10px", padding:"5px 10px"}} onClick={getValue}>Search</button>
             </form>
             <div >
           <h3 style={{color:"red"}}>Title:</h3>  
     {
-        data?.items.map(element=>{
+        terms?.map(element=>{
             console.log(element)
             
            return <p key={shortid.generate()}>
@@ -46,46 +57,55 @@ const getValue=(e)=>{
         })
     }   
              </div>
-             <div>
+             <div >
         <h3 style={{color:"red"}}> Start year: </h3>   
     {
-        data?.items.map(element=>{
+        terms?.map(element=>{
            return <p key={shortid.generate()}>
                {element.start_year}
            </p> 
         })
     }   
              </div>
-             <div>
+             <div >
              <h3 style={{color:"red"}}>  Publisher: </h3>      
     {
-        data?.items.map(element=>{
+        terms?.map(element=>{
            return <p key={shortid.generate()}>
                {element.publisher}
            </p> 
         })
     }   
              </div>
-             <div>
+             <div >
              <h3 style={{color:"red"}}>  Country:</h3>        
     {
-        data?.items.map(element=>{
+        terms?.map(element=>{
            return <p key={shortid.generate()}>
                {element.country}
            </p> 
         })
     }   
              </div>
-             <div>
+             <div >
              <h3 style={{color:"red"}}>  City:</h3>         
     {
-        data?.items.map(element=>{
+        terms?.map(element=>{
            return <p key={shortid.generate()}>
                {element.city}
            </p> 
         })
     }   
              </div>
+
+{
+    count &&
+
+  <Paginations pageCount={count} pagination={setPage}>
+            
+  </Paginations> 
+}
+            
         </>
     )
 }
