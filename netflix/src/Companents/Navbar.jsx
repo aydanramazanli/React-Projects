@@ -1,25 +1,25 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import ppImg from "../Images/pp-img.png";
 import logo from "../Images/logo.png";
 import "../Css/Navbar.css";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import Dark from './Context'
 
 function Navbar() {
   const [local, setLocal] = useState(null);
   const [status, setStatus] = useState(false);
   const location = useLocation();
+  const DarkMood= useContext(Dark)
 
   const logOut = useCallback(() => {
     if (local !== null) {
       return <span onClick={remove}>Log Out</span>;
     }
-  },[local]);
+  }, [local]);
 
-
-
-  const remove = useCallback(() =>{
+  const remove = useCallback(() => {
     window.localStorage.removeItem("data");
-  },[]);
+  }, []);
 
   useEffect(() => {
     const locals = JSON.parse(localStorage.getItem("data"));
@@ -46,8 +46,11 @@ function Navbar() {
             />
             <i class="fas fa-search text-gray-100 text-xl px-4"></i>
           </div>
-
-          <div
+          <div className="flex w-40 justify-between">
+          <div  onClick={() => DarkMood.dark===false? DarkMood.setDark(true): DarkMood.setDark(false)} style={DarkMood.dark===false? {color: "#497285"}:{color: "#fff"}} className="text-center w-44 text-xl">
+            <i className="fas fa-moon"></i>
+          </div>
+          <div 
             onClick={() =>
               status === false ? setStatus(true) : setStatus(false)
             }
@@ -58,24 +61,22 @@ function Navbar() {
               }}
               className="text-red-600 font-bold"
             >
-              <span>
-                {local === null ? "Register" : null}
-              </span>
+              <span>{local === null ? "Register" : null}</span>
             </Link>
-
-            {local !==null ? 
-            
-              <div className="dropdown" > 
+           
+            {local !== null ? (
+              <div className="dropdown">
                 <div className="prof-img flex items-center relative">
                   <img src={ppImg} alt="profil image" className="rounded" />
                   <i class="navbar-pic-arrow fas fa-caret-down  text-gray-50 flex items-center px-4"></i>
                 </div>
                 <div
-                  className="m-modal rounded" OnClick
+                  className="m-modal rounded"
+                  OnClick
                   style={
                     status !== false
                       ? { display: "block" }
-                : { display: "none" }
+                      : { display: "none" }
                   }
                 >
                   <ul className="flex flex-col text-gray-100 ">
@@ -86,17 +87,22 @@ function Navbar() {
                           : " "}
                       </h2>
                     </li>
-                    <li  className="my-2 text-base">
+                    <li className="my-2 text-base">
                       <Link to="/">Add List</Link>
                     </li>
                     <li>
-                      <div className="logOut text-base" style={{cursor:"pointer"}}>{logOut()}</div>
+                      <div
+                        className="logOut text-base"
+                        style={{ cursor: "pointer" }}
+                      >
+                        {logOut()}
+                      </div>
                     </li>
                   </ul>
                 </div>
               </div>
-
-            : null}
+            ) : null}
+          </div>
           </div>
         </div>
       </div>

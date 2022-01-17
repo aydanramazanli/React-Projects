@@ -16,7 +16,7 @@
   transition: all 0.3s ease-in-out;
 }
 .navbar-right {
-  width: 22rem;
+  width: 24rem;
 }
 .fa-search:hover {
   transform: scale(1.2);

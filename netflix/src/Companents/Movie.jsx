@@ -6,16 +6,16 @@ const style = {
   width: "1250px",
 };
 
-export default function Movie({ category, film }) {
+export default function Movie({ category, movie }) {
 const [value, setValue] = useState(0);
 const [length,setLength] = useState();
 
 
 useEffect(() => {
-  if(film) {
-    setLength(film.length);
+  if(movie) {
+    setLength(movie.length);
   }
-},[film])
+},[movie])
 
 
 
@@ -33,8 +33,9 @@ useEffect(() => {
   }
 
   const showMovie = () => {
-    if (film) { 
-      return film.map((info) => {
+    if(movie) { 
+      return movie.map((info) => {
+        console.log(info)
         return (
           <Link
             to={`film-detail/${info.id}`}
@@ -48,8 +49,8 @@ useEffect(() => {
                 className="h-full w-full  object-cover"
               />
               <div className="movieInfo absolute bottom-2 left-4 text-gray-50 font-medium  text-sm">
-                <h2> Name : {info.name}</h2>
-                <h3> Time : {info.release_date}</h3>
+                <h2> Name : {info.title || info.title || info.original_name ||info.original_title}</h2>
+                <h3> Time : {info.release_date ||info.first_air_date}</h3>
                 <span>Stars: {info.vote_average}</span>
               </div>
             </div>

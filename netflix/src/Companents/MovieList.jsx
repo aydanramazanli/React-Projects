@@ -7,38 +7,62 @@ import { MovieData } from "../App";
 
 export default function MovieList() {
   //  const {data}= useContext(MovieData)
-  const [info, setInfo] = useState(null);
-  const [filmInfos, setFilmInfos] = useState(null);
+  const [obj, setObj] = useState(null);
+  const [categories, setCategories] = useState(null);
 
-
-
-  const list = async () => { 
-   const urls=[`https://api.themoviedb.org/3/list/${8174238}?api_key=579fa79d34e501aae2fefaae5e307ee0&language=en-US`,`https://api.themoviedb.org/3/list/${8174753}?api_key=579fa79d34e501aae2fefaae5e307ee0&language=en-US`]
-	 try {
-      const popular = await Promise.all(urls.map(e=>fetch(e)))
-      const datasPopular = await Promise.all(popular.map(e=>e.json()))
-       console.log(datasPopular);
-       // mapdan json cixar 
-       //https://stackoverflow.com/questions/46241827/fetch-api-requesting-multiple-get-requests
-      setFilmInfos(datasPopular);
-      const data = datasPopular.items;
-      setInfo(data);
+  const list = async () => {
+    try {
+      Promise.all([
+       await fetch(`https://api.themoviedb.org/3/list/${8174238}?api_key=579fa79d34e501aae2fefaae5e307ee0&language=en-US`),
+       await fetch(`https://api.themoviedb.org/3/list/${8174753}?api_key=579fa79d34e501aae2fefaae5e307ee0&language=en-US`),
+      ])
+        .then(function (responses) {
+          return Promise.all(
+            responses.map(function (response) {
+              //obj>json
+              return response.json();
+            })
+          );
+        }).then(function (data) { 
+           data.map(moviesObj => {
+             setCategories(moviesObj)
+         
+           
+           })
+          
+          return data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+        //each film datas
+       
+      setObj(categories.items);
     } catch {
+      //try -catch
       console.log("error data");
     }
   };
 
-  
+
 
   useEffect(() => {
     list();
   }, []);
 
+
+
   return (
     <div className="container mx-auto px-4">
-      {filmInfos !== null ? (
-        <Movie shortid={shortid()} category={filmInfos.name} film={info} />
-      ) : null}
+  
+    {categories!==null?(
+       <Movie shortid={shortid()}
+       category={categories.name}
+       movie={obj} 
+       />
+    ) :null}
+   
+   
     </div>
   );
 }

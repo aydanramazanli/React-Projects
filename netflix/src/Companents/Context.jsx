@@ -2,10 +2,14 @@ import React, {createContext}  from 'react';
 
 
 
-const MovieData = createContext()
+// export const MovieData = createContext()
 
+ const Dark= createContext({})
+
+ export const DarkModeProvider=Dark.Provider
 
 //export const MovieProvider=MovieData.Provider
 
-export default MovieData
+export default Dark
+
 

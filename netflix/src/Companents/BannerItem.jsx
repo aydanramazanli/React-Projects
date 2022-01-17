@@ -1,8 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, {useContext} from "react";
+import Dark from './Context'
+
+
 
 
 export default function BannerItem({ title, desc, link, img }) {
+  const DarkMood= useContext(Dark)
   return (
     <div
       className="relative z-0 banner-img w-full h-40"
