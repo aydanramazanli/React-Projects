@@ -1,11 +1,11 @@
-import React, {useContext} from "react";
-import Dark from './Context'
+ import React from "react";
+
 
 
 
 
 export default function BannerItem({ title, desc, link, img }) {
-  const DarkMood= useContext(Dark)
+
   return (
     <div
       className="relative z-0 banner-img w-full h-40"
@@ -20,7 +20,7 @@ export default function BannerItem({ title, desc, link, img }) {
         <h2 className="text-5xl text-white font-bold my-4">{title}</h2>
         <p className="text-white font-bold my-2 text-xl">{desc}</p>
         <div className="buttons flex justify-between w-80 my-4">
-          <div className="fragman px-4 py-2 bg-white rounded font-bold items-center">
+          <div className="fragman px-4 py-2 bg-white rounded font-bold items-center"  style={{color:"#000"}}>
             <i class="fas fa-play mx-2"></i>
             <a href={link} target="_blank">
               Play Trailer

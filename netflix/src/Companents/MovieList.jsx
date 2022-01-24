@@ -10,11 +10,11 @@ export default function MovieList() {
   const [obj, setObj] = useState(null);
   const [categories, setCategories] = useState(null);
 
-  const list = async () => {
+  const list = () => {
     try {
       Promise.all([
-       await fetch(`https://api.themoviedb.org/3/list/${8174238}?api_key=579fa79d34e501aae2fefaae5e307ee0&language=en-US`),
-       await fetch(`https://api.themoviedb.org/3/list/${8174753}?api_key=579fa79d34e501aae2fefaae5e307ee0&language=en-US`),
+     fetch(`https://api.themoviedb.org/3/list/${8174238}?api_key=579fa79d34e501aae2fefaae5e307ee0&language=en-US`),
+       fetch(`https://api.themoviedb.org/3/list/${8174753}?api_key=579fa79d34e501aae2fefaae5e307ee0&language=en-US`),
       ])
         .then(function (responses) {
           return Promise.all(
@@ -24,20 +24,14 @@ export default function MovieList() {
             })
           );
         }).then(function (data) { 
-           data.map(moviesObj => {
-             setCategories(moviesObj)
-         
-           
-           })
-          
+          setCategories(data)
+          console.log(data);
           return data;
         })
         .catch(function (error) {
           console.log(error);
         });
-        //each film datas
        
-      setObj(categories.items);
     } catch {
       //try -catch
       console.log("error data");
@@ -55,12 +49,11 @@ export default function MovieList() {
   return (
     <div className="container mx-auto px-4">
   
-    {categories!==null?(
-       <Movie shortid={shortid()}
-       category={categories.name}
-       movie={obj} 
-       />
-    ) :null}
+     {categories!==null? 
+ categories.map((data) =>
+ <Movie  shortid={shortid} movie={data.items} category={data.name}/>
+)
+ :null} 
    
    
     </div>
