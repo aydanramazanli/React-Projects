@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-// import shortid from "shortid";
 import "..//Css/MovieList.css";
+import  Dark from './Context'
 
 const style = {
   width: "1250px",
@@ -10,7 +10,7 @@ const style = {
 export default function Movie({ category, movie }) {
 const [value, setValue] = useState(0);
 const [length,setLength] = useState();
-
+const DarkMood=useContext(Dark)
 
 useEffect(() => {
   if(movie) {
@@ -65,7 +65,7 @@ useEffect(() => {
     <div className="movies-section">
       <div className=" box-border	overflow-hidden">
         <div className="py-2">
-          <h2 className="text-gray-50 text-2xl font-bold my-3">{category}</h2>
+          <h2 className="text-gray-50 text-2xl font-bold my-3" style={DarkMood.dark===true ? {color:"white"}: {color:"black"}  }>{category}</h2>
         </div>
         <div
           style={{
