@@ -1,5 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+// import shortid from "shortid";
 import "..//Css/MovieList.css";
 
 const style = {
@@ -35,9 +36,9 @@ useEffect(() => {
   const showMovie = () => {
     if(movie) { 
       return movie.map((info) => {
-        console.log(info)
+    
         return (
-          <Link
+          <Link 
             to={`film-detail/${info.id}`}
             className="movie-link w-64 h-48  mx-1.5"
             target="_blank"
@@ -76,8 +77,8 @@ useEffect(() => {
         </div>
       </div>
        <div className="buttons">
-       <button className="next" onClick={nextSlider}><i class="fas fa-chevron-right text-gray-50"></i></button> 
-       <button className="prev" onClick={prevSlider}><i class="fas fa-chevron-left text-gray-50"></i></button> 
+       <button className="next" onClick={nextSlider}><i className="fas fa-chevron-right text-gray-50"></i></button> 
+       <button className="prev" onClick={prevSlider}><i className="fas fa-chevron-left text-gray-50"></i></button> 
       </div> 
     </div>
   );

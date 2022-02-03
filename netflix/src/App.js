@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SDK from "./Sdk";
+ import SDK from "./Companents/Sdk";
 import Banner from "./Companents/Banner";
 import Navbar from "./Companents/Navbar";
 import MovieList from "./Companents/MovieList";
@@ -13,7 +13,8 @@ export const MovieData = createContext({});
 
 function App() {
   const [dark, setDark] = useState(false);
-  const Sdk = new SDK();
+
+
 
   return (
     <Router>

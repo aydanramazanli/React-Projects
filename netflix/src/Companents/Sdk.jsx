@@ -1,18 +1,20 @@
-import axios from 'axios';
+import axios from 'axios'
 
 class SDK{
     constructor(){
-        this.instance=axios.create({
+        this.instance= axios.create({
             baseURL: 'https://api.themoviedb.org/4',
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2MzU5NzU4MzYsImF1ZCI6IjI4NWExMDdmMGM5MmNmZGE0NjdkYjIyMWNjYzUwMmY3IiwianRpIjoiMzY4NzEzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCIsImFwaV93cml0ZSJdLCJ2ZXJzaW9uIjoxLCJzdWIiOiI1ZjE5ODAyNGE2ZDkzMTAwMzc4NzA1MmYifQ.ZP8HlEcAthUMlIThvRa-keAxFBkIZ24fL1p_jiFWk_U"
+                
             },
             params: {
                 "api_key": "579fa79d34e501aae2fefaae5e307ee0", 
                 'access_tokken': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2MzU5NzU4MzYsImF1ZCI6IjI4NWExMDdmMGM5MmNmZGE0NjdkYjIyMWNjYzUwMmY3IiwianRpIjoiMzY4NzEzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCIsImFwaV93cml0ZSJdLCJ2ZXJzaW9uIjoxLCJzdWIiOiI1ZjE5ODAyNGE2ZDkzMTAwMzc4NzA1MmYifQ.ZP8HlEcAthUMlIThvRa-keAxFBkIZ24fL1p_jiFWk_U"
             }
         })
+
         this.ins = axios.create({
             baseURL: 'https://api.themoviedb.org/3',
             headers: {
@@ -22,18 +24,21 @@ class SDK{
                 "api_key": "285a107f0c92cfda467db221ccc502f7"
             }
         })
+
         this.accountId = '5f198024a6d931003787052f'
-      
+        
     }
 
     async getListsFromAccount() {
-        try {
-            const request = await this.instance.get(`/account/${this.accountId}/lists`)
-            console.log(request)
-            return request.data
-        } catch (error) {
-            console.log(error)
-        }
+       try{
+        const request = await this.instance.get(`/account/${this.accountId}/lists`)
+        const res= request.data
+        return res
+       }
+         catch(error){
+             console.log(error)
+         } 
+        
     }
  
 
@@ -46,14 +51,14 @@ class SDK{
         }
     }
 
-    async getSinglePost(singlePostId, type) {
-        try {
-            const req = await this.ins.get(`/${type}/${singlePostId}`)
-            return req.data
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    // async getSinglePost(singlePostId, type) {
+    //     try {
+    //         const req = await this.ins.get(`/${type}/${singlePostId}`)
+    //         return req.data
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
     
 }
 
