@@ -4,7 +4,7 @@ import "..//Css/MovieList.css";
 import  Dark from './Context'
 
 const style = {
-  width: "1250px",
+  width: "1200px",
 };
 
 export default function Movie({ movie, category}) {
@@ -20,7 +20,8 @@ useEffect(() => {
 
 
   const nextSlider=()=>{
-    if(value > -((length-(length%4)) * 256)){
+    if(value > -((length-(length%4)) * 200)){
+      console.log(value);
       setValue(value-parseFloat(style.width.replace(/\D/g,'')))
     }
   }

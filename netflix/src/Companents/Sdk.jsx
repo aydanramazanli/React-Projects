@@ -56,6 +56,18 @@ class SDK{
             console.log(error)
         }
     }
+
+async getSearch(query, {abortSignal, page=1}={}){
+    const req = await this.instance.get('/search/multi', {
+        params:{
+            query,
+            page
+        },
+        signal: abortSignal,
+    })
+    return req.data
+}
+
 }
 
 export default SDK

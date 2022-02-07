@@ -28,7 +28,7 @@ function Navbar() {
 
   return (
     <div className="fixed w-full navbar z-50">
-      <div className="flex container mx-auto py-4 px-6 place-items-center justify-between ">
+      <div className="flex container mx-auto py-4 px-6 place-items-center justify-between" style={{width:"1200px"}}>
         <div className="navbar-left">
           <div className="logo z-40" style={{ width: "70%" }}>
             <NavLink to="/">

@@ -23,7 +23,7 @@ const [list,setList]=useState(
 )
 
   return (
-   <div>
+   <div className="my_carousel">
         <Carousel>
        {list.map((i)=><BannerItem key={shortid()} title={i.title} desc={i.desc} link={i.link} img={i.img} />)}
        </Carousel>
