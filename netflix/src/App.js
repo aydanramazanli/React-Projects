@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
- import SDK from "./Companents/Sdk";
 import Banner from "./Companents/Banner";
 import Navbar from "./Companents/Navbar";
 import MovieList from "./Companents/MovieList";
@@ -41,7 +40,7 @@ function App() {
             <Route path="/registeration" exact>
               <Register />
             </Route>
-            <Route path="/film-detail/:id">
+            <Route path="/film-detail/:type/:id">
               <Detail />
             </Route>
           </Switch>

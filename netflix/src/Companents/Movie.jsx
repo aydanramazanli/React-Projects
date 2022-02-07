@@ -2,12 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "..//Css/MovieList.css";
 import  Dark from './Context'
+import Detail from './Detail'
 
 const style = {
   width: "1250px",
 };
 
-export default function Movie({ category, movie }) {
+export default function Movie({ movie, category}) {
 const [value, setValue] = useState(0);
 const [length,setLength] = useState();
 const DarkMood=useContext(Dark)
@@ -17,8 +18,6 @@ useEffect(() => {
     setLength(movie.length);
   }
 },[movie])
-
-
 
 
   const nextSlider=()=>{
@@ -33,16 +32,15 @@ useEffect(() => {
     }
   }
 
+
   const showMovie = () => {
     if(movie) { 
       return movie.map((info) => {
-    
-        return (
+        return ( 
           <Link 
-            to={`film-detail/${info.id}`}
+            to={`film-detail/${info.id}/${info.media_type}`}
             className="movie-link w-64 h-48  mx-1.5"
-            target="_blank"
-          >
+          >  
             <div className="movie-item h-full">
               <img
                 src={`https://image.tmdb.org/t/p/original/${info.poster_path}`}
