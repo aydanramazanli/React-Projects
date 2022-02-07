@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import SDK from "./Sdk"
+import Dark from './Context'
+
 
 
 export default function Detail() {
   const [movie, setMovie] = useState();
    let {id,  type } = useParams();
-   console.log(id, type);
+const DarkMood = useContext(Dark)
    const sdk = new SDK();
 
 
@@ -25,8 +27,8 @@ export default function Detail() {
         className="movie-item flex flex-row pt-20 px-20 "
         style={{ height: "87vh" }}
       >
-        <div className="text-black font-medium w-1/2 px-10 text-sm">
-          <h2 className="text-4xl tracking-widest pb-2"> {movie?.name}</h2>
+        <div className="text-black font-medium w-1/2 px-10 text-sm" style={DarkMood.dark ===true ?{color:"white"} :{color:"black"}}>
+          <h2 className="text-4xl tracking-widest pb-2"> {movie?.name ?? movie?.title}</h2>
           <h3 className="text-lg  py-1">
         
             Time : {movie?.release_date || movie?.first_air_date}

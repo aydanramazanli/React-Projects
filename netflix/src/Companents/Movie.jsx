@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "..//Css/MovieList.css";
 import  Dark from './Context'
-import Detail from './Detail'
 
 const style = {
   width: "1250px",
