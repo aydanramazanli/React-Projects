@@ -6,7 +6,7 @@ import { SearchItem } from '../App'
 const Search = () => {
     const { inputValue, handleChange, setInputValue } = useContext(SearchItem)
     return <>
-        <div className="input-group rounded mx-4 flex" style={{ width: '210px', position: 'inherit' }}>
+        <div className="input-group rounded mx-4 flex" style={{ width: '210px', position: 'inherit', padding:"5px" }}>
             <input type="search" className="form-control rounded" value={inputValue} placeholder="Search" aria-label="Search"
                 aria-describedby="search-addon"  onChange={(e) => {
                     handleChange()

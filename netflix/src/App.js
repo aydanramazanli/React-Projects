@@ -1,9 +1,8 @@
 import "./App.css";
 import React, { createContext, useState, useRef } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Banner from "./Companents/Banner";
+import Home from "./Companents/Home"
 import Navbar from "./Companents/Navbar";
-import MovieList from "./Companents/MovieList";
 import Footer from "./Companents/Footer";
 import { DarkModeProvider } from "./Companents/Context";
 import Detail from "./Companents/Detail";
@@ -87,8 +86,7 @@ function App() {
 
           <Switch>
             <Route path="/" exact>
-              <Banner />
-              <MovieList />
+            <Home/>
             </Route>
             <Route path="/registeration" exact>
               <Register />

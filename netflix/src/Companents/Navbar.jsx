@@ -40,14 +40,7 @@ function Navbar() {
 
         <div className="navbar-right flex items-center justify-between ">
 <Search></Search>
-          {/* <div className="search w-2 flex ">
-            <input
-              type="text"
-              placeholder="Search"
-              className="bg-color-500 border-gray-50 border-2 bg-black px-2 text-gray-100 outline-none"
-            />
-            <i className="fas fa-search text-gray-100 text-xl px-4"></i>
-          </div> */}
+          
           <div className="flex w-40 justify-between">
           <div  onClick={() => DarkMood.dark===false? DarkMood.setDark(true): DarkMood.setDark(false)} style={DarkMood.dark===false? {color: "#497285"}:{color: "#fff"}} className="text-center w-44 text-xl">
             <i className="fas fa-moon"></i>
