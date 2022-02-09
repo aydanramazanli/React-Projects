@@ -57,7 +57,7 @@ class SDK{
         }
     }
 
-async getSearch(query, {abortSignal, page=1}={}){
+async getSearch(query, {abortSignal, page=1} = {}){
     const req = await this.instance.get('/search/multi', {
         params:{
             query,
