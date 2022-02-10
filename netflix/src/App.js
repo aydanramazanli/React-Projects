@@ -81,6 +81,7 @@ function App() {
               ? { backgroundColor: "#000", color: "#fff" }
               : { backgroundColor: "#fff", color: "#000" }
           }
+         
         >
           <Navbar />
 

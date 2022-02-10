@@ -1,25 +1,37 @@
 import React from 'react'
+import {Link } from 'react-router-dom'
 
 
-const SearchPost = () => {
 
-    return <>
+const SearchPost = ({id, release_date, media_type, vote_average, original_name, original_title, first_air_date, backdrop_path}) => {
+    return(
+        <div className=" mx-auto  relative" style={{width:"300px"}}>
+              <Link  to={{
+                pathname: `film-detail/${id}/${media_type}`
+            }}>
+            <div className=" d-block relative border-gray-500" >
+                <img src={'https://image.tmdb.org/t/p/original/' + backdrop_path} alt="" /> 
+                <div className="absolute top-8 left-8">
+                <p className=" text-2xl my-2">{original_name || original_title}</p>
+                <p className=" text-lg">
+                    <span className="green">{release_date || first_air_date}</span>
+                    <span className="rate">{vote_average}</span>
+                </p>
+                </div>
+                <div className=" absolute right-0 top-0 m-2">
+                <i  className="fas fa-plus-circle" ></i>
+            </div>
+            </div>
+           
+          
+               
+            </Link>
 
-    <div className="grid grid-cols-3 mx-auto py-24 gap-6" style={{width:"900px", height:"100vh"}}>
-          <div>
-      <img src="https://flxt.tmsimg.com/assets/p17153590_b_h9_aa.jpg" alt="" />
-  </div>
-  <div>
-      <img src="https://flxt.tmsimg.com/assets/p17153590_b_h9_aa.jpg" alt="" />
-  </div>
-  <div>
-      <img src="https://flxt.tmsimg.com/assets/p17153590_b_h9_aa.jpg" alt="" />
-  </div>
-    </div>
+        </div>
+
+
+     )   
     
-  
-     
-    </>
 }
 
 export default SearchPost
