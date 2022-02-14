@@ -1,5 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react';
 import Banner from './Banner'
+import Modal from './Modal'
 import MovieList from './MovieList'
 import SearchPosts from './SearchPosts';
 import {SearchItem} from '../App'
@@ -8,14 +9,22 @@ import shortid from "shortid";
 import loadingGif from '../Images/loading.gif'
 
 
+
 export default function Home() {
-   
+    //movie datas 
+    const [addData, setAddData]=useState([]);
+    const [datas, setDatas]=useState([]) 
+//search input 
     const { inputValue, searchResults, setCurrentIndex,loading, currentIndex, handleChange } = useContext(SearchItem)
+    // infinity view 
     const { inView, ref } = useInView({
         threshold: 0,
     }) 
-    const [isVisible, setIsVisible] = useState(false)
+
+    //Modal
+    const [visible, setVisible] = useState(false)
     const [modalData, setModalData] = useState()
+
 
     useEffect(() => {
         if (inView) {
@@ -29,23 +38,25 @@ export default function Home() {
         }
     }, [currentIndex])
 
+    //Modal datas
     const isOpen = (index) => {
       const searchData = searchResults[index]
       setModalData(searchData)
-      setIsVisible(true)
+      setVisible(true)
       console.log(searchData)
   }
 
 
   return <>
+     {visible && <Modal {...modalData} closeModal={setVisible} datas={addData} />}
 {inputValue === ''?
 <>
   <Banner/>
-  <MovieList/>
+  <MovieList addData={addData} datas={datas}  setAddData={setAddData} setData={setDatas}/>
   </>
   :
  <div className=" relative grid grid-cols-3 gap-5 py-20 m-auto" style={{width:"1000px"}}>
-    {    loading ? <img className='w-20 h-20 absolute top-10 left-1/2' src={loadingGif} /> : searchResults.map((e, index)=>{
+    {    loading ? <img className='w-20 h-20 absolute top-10 left-1/2' src={loadingGif} alt="loading img"/> : searchResults.map((e, index)=>{
     const obj ={};
     if (index === searchResults.length - 1) {
       obj.ref = ref;

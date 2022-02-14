@@ -1,39 +1,62 @@
-// import React,{useState, useEffect, useCallback} from 'react'
-// import {Link, useLocation} from 'react-router-dom'
-// import "../Css/Modal.css"
+import React, {useRef, useMemo} from 'react'
+import SDK from './Sdk'
+import shortid from "shortid";
 
-// export default function Modal() {
-//    const [local, setLocal] = useState(null)
-//    const [status, setStatus]= useState(false)
-//    const loc =useLocation()
-//    const LogOut = useCallback(() => {
-//     if (local !== null) {
-//         return <span onClick={removeLocal} className="logout">Log Out</span>
-//     }
-// }, [local])
-// const removeLocal = useCallback(() => {
-//     window.localStorage.removeItem("data");
-// }, [])
 
+export default function Modal({closeModal, media_type, id, datas}) {
+    const sdk = new SDK();
+    const list = useRef(null)
+
+
+    const add=async(e) => {
+        e.preventDefault();
+        const id = list.current.value
+        const listData={
+            items : [
+            {
+                media_type: media_type,
+                media_id: id
+            }
+        ]}
+
+        try{
+             await sdk.addItem(id, listData)
+        }
+        catch(error){
+            console.log(error)
+        }
+
+        if (listData) {
+            alert('Movie to list added')
+        }
+    }
+
+    const Lists = useMemo(() => {
+        return (
+            datas?.results.map((e) => {
+                return (
+                    <option key={shortid.generate()} value={e?.id}>{e?.name}</option>
+                )
+            })
+        )
+    }, [datas])
+
+
+
+  return (
+    <>
+<div className="main-modal">
+    <div className="main-body" onClick={() => closeModal(false)}> 
+    <form action="" onSubmit={add}>
+        <select ref={list} name="" id="">
+        <option value="0" selected>Select list</option>
+        {Lists}
+        </select>
+        <button> Add Item</button>
+    </form>
+    </div>
+</div>
     
-//    useEffect(() => {
-//        const localData=JSON.parse(localStorage.getItem("data"))
-//       setLocal(localData)
-//    }, [loc])
-
-//     return (
-//         <div className="modal rounded" >
-//             <ul className="flex flex-col text-gray-100 ">
-//                 <li className="py2 px-1">
-//                    <h2>`${local.name + " "+ local.lastName}`</h2>
-//                 </li>
-//                 <li>
-//                     <Link to ="/">Add List</Link>
-//                 </li>
-//                 <li>
-//                     <Link to ="/registeration">Log Out</Link>
-//                 </li>
-//             </ul>
-//         </div>
-//     )
-// }
+    </>
+  )
+}

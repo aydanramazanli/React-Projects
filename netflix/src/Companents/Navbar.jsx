@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback, useContext } from "react";
-import ppImg from "../Images/pp-img.png";
+import profil from "../Images/pp-img.png";
 import logo from "../Images/logo.png";
 import "../Css/Navbar.css";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Dark from './Context'
 import Search from "./Search"
-import CreateList from "./CreateList";
 
 function Navbar() {
   const [local, setLocal] = useState(null);
@@ -70,7 +69,7 @@ const remove=() =>{
             {local !== null ? (
               <div className="dropdown">
                 <div className="prof-img flex items-center relative">
-                  <img src={ppImg} alt="profil image" className="rounded" />
+                  <img src={profil} alt="profilphoto" className="rounded" />
                   <i className="navbar-pic-arrow fas fa-caret-down  text-gray-50 flex items-center px-4"></i>
                 </div>
                 <div

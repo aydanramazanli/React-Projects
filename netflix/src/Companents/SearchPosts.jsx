@@ -18,8 +18,8 @@ const SearchPost = ({id, release_date, media_type, vote_average, original_name, 
                     <span className="rate">{vote_average}</span>
                 </p>
                 </div>
-                <div className=" absolute right-0 top-0 m-2">
-                <i  className="fas fa-plus-circle" ></i>
+                <div className=" absolute right-0  top-0 m-2" >
+                <i  className="fas fa-plus-circle" style={{fontSize:"22px"}} ></i>
             </div>
             </div>
            

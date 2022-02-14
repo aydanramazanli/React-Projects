@@ -5,22 +5,16 @@ import SDK from './Sdk'
 import shortid from "shortid";
 
 
-
-
-export default function MovieList() {
+export default function MovieList({addData, datas,  setAddData, setData}) {
   const sdk = new SDK();
-  const [addData, setAddData]=useState([]);
-  const [datas, setDatas]=useState([]) 
-
   const apiData=async()=>{
   const data=await sdk.getListsFromAccount()
   setAddData(data)
   const lists = data?.results.map(w=>w.id)
   Promise.all(lists.map(w=>sdk.getList(w))).then(w=>{
-      setDatas(w)
+    setData(w)
     })
   }
-
 
   useEffect(() => {
     apiData()
@@ -36,7 +30,7 @@ export default function MovieList() {
  />
 )
  :null}  
-   
+
     </div>
   );
 }
