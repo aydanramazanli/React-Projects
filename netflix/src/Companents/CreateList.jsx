@@ -1,8 +1,6 @@
 import React, {useRef} from 'react'
 import SDK from './Sdk'
 
-
-
 export default function CreateList() {
     const sdk = new SDK();
     const inputRef= useRef(null)
@@ -30,18 +28,17 @@ e.preventDefault()
 
 }}
 
-  
 
-  return (
+return (
     <div style={{height:"87vh"}} className="flex justify-center items-center">
 <div className="w-72 ">
 <form action="" onSubmit={addList}>
     <div className="flex flex-col ">
-        <label className="my-3 mx-auto font-bold">List Name</label>
+        <label className="my-3 mx-auto font-medium text-xl">List Name</label>
         <input ref={inputRef} type="text" placeholder="Enter list name" className="p-2 rounded outline-none text-gray-800 font-semibold" />
     </div>
     <div className="flex flex-col ">
-        <label className="my-3 mx-auto font-bold">Description</label>
+        <label className="my-3 mx-auto font-medium text- xl">Description</label>
       <textarea ref={descRef} name="" id="" cols="20" rows="4" placeholder="Enter description" className="p-2 rounded outline-none text-gray-800 font-semibold"></textarea>
     </div>
     <div>

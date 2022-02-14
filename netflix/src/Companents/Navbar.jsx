@@ -42,14 +42,13 @@ const remove=() =>{
 
         <div className="navbar-right flex items-center justify-between ">
 <Search></Search>
-          <div className="pointer">
-          <Link to={'/createList'}>
+          <div className="pointer mx-1">
+          <Link to={"/CreateList"} className="text-red-600 font-bold">
           Create List
           </Link>
-           
           </div>
-          <div className="flex w-40 justify-between">
-          <div  onClick={() => DarkMood.dark===false? DarkMood.setDark(true): DarkMood.setDark(false)} style={DarkMood.dark===false? {color: "#497285"}:{color: "#fff"}} className="text-center w-44 text-xl">
+          <div className="flex w-32 justify-between">
+          <div  onClick={() => DarkMood.dark===false? DarkMood.setDark(true): DarkMood.setDark(false)} style={DarkMood.dark===false? {color: "#497285"}:{color: "#fff"}} className="text-center w-32 text-xl">
             <i className="fas fa-moon"></i>
           </div>
           <div 

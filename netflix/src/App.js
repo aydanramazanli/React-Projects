@@ -3,8 +3,8 @@ import React, { createContext, useState, useRef } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Companents/Home"
 import Navbar from "./Companents/Navbar";
-import Footer from "./Companents/Footer";
 import CreateList from './Companents/CreateList'
+import Footer from "./Companents/Footer";
 import { DarkModeProvider } from "./Companents/Context";
 import Detail from "./Companents/Detail";
 import Register from "./Companents/Registration/Register";
@@ -93,11 +93,11 @@ function App() {
             <Route path="/registeration" exact>
               <Register />
             </Route>
-            <Route>
-              <CreateList path="/createList"/>
-            </Route>
             <Route path="/film-detail/:type/:id">
               <Detail />
+            </Route>
+            <Route path="/CreateList" exact>
+              <CreateList/>
             </Route>
           </Switch>
           <Footer />
