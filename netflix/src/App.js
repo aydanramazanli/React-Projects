@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Companents/Home"
 import Navbar from "./Companents/Navbar";
 import Footer from "./Companents/Footer";
+import CreateList from './Companents/CreateList'
 import { DarkModeProvider } from "./Companents/Context";
 import Detail from "./Companents/Detail";
 import Register from "./Companents/Registration/Register";
@@ -91,6 +92,9 @@ function App() {
             </Route>
             <Route path="/registeration" exact>
               <Register />
+            </Route>
+            <Route>
+              <CreateList path="/createList"/>
             </Route>
             <Route path="/film-detail/:type/:id">
               <Detail />

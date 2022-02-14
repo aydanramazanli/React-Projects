@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect, useRef} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import Banner from './Banner'
 import MovieList from './MovieList'
 import SearchPosts from './SearchPosts';

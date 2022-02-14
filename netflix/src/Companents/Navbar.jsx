@@ -5,6 +5,7 @@ import "../Css/Navbar.css";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Dark from './Context'
 import Search from "./Search"
+import CreateList from "./CreateList";
 
 function Navbar() {
   const [local, setLocal] = useState(null);
@@ -12,15 +13,17 @@ function Navbar() {
   const location = useLocation();
   const DarkMood= useContext(Dark)
 
-  const logOut = useCallback(() => {
+  const LogOut = useCallback(() => {
     if (local !== null) {
-      return <span onClick={remove}>Log Out</span>;
+        return <span onClick={remove} className="logout">Log Out</span>
     }
-  }, [local]);
+}, [local])
 
-  const remove = useCallback(() => {
+
+const remove=() =>{
     window.localStorage.removeItem("data");
-  }, []);
+}
+
 
   useEffect(() => {
     const locals = JSON.parse(localStorage.getItem("data"));
@@ -40,7 +43,12 @@ function Navbar() {
 
         <div className="navbar-right flex items-center justify-between ">
 <Search></Search>
-          
+          <div className="pointer">
+          <Link to={'/createList'}>
+          Create List
+          </Link>
+           
+          </div>
           <div className="flex w-40 justify-between">
           <div  onClick={() => DarkMood.dark===false? DarkMood.setDark(true): DarkMood.setDark(false)} style={DarkMood.dark===false? {color: "#497285"}:{color: "#fff"}} className="text-center w-44 text-xl">
             <i className="fas fa-moon"></i>
@@ -90,7 +98,7 @@ function Navbar() {
                         className="logOut text-base"
                         style={{ cursor: "pointer" }}
                       >
-                        {logOut()}
+                  {LogOut}
                       </div>
                     </li>
                   </ul>

@@ -68,6 +68,17 @@ async getSearch(query, {abortSignal, page=1} = {}){
     return req.data
 }
 
+
+async postList(list){
+    try{
+        const req = await this.instance.post('/list', list)
+        return  req.data
+    }
+    catch(error){
+       console.log(error) 
+    }
+}
+
 }
 
 export default SDK
