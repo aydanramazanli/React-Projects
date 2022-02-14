@@ -3,7 +3,8 @@ import {Link } from 'react-router-dom'
 
 
 
-const SearchPost = ({id, release_date, media_type, vote_average, original_name, original_title, first_air_date, backdrop_path}) => {
+const SearchPost = ({id, release_date, media_type, vote_average, original_name, original_title, first_air_date, backdrop_path, onClick}) => {
+
     return(
         <div className=" mx-auto  relative" style={{width:"300px"}}>
               <Link  to={{
@@ -18,14 +19,12 @@ const SearchPost = ({id, release_date, media_type, vote_average, original_name, 
                     <span className="rate">{vote_average}</span>
                 </p>
                 </div>
-                <div className=" absolute right-0  top-0 m-2" >
+                
+            </div>
+            </Link>
+            <div className=" absolute right-0  top-0 m-2 pointer" onClick={onClick}>
                 <i  className="fas fa-plus-circle" style={{fontSize:"22px"}} ></i>
             </div>
-            </div>
-           
-          
-               
-            </Link>
 
         </div>
 

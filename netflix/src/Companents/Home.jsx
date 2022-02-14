@@ -43,12 +43,11 @@ export default function Home() {
       const searchData = searchResults[index]
       setModalData(searchData)
       setVisible(true)
-      console.log(searchData)
   }
 
 
   return <>
-     {visible && <Modal {...modalData} closeModal={setVisible} datas={addData} />}
+     {visible && <Modal {...modalData} closeModal={setVisible} addData={addData} />}
 {inputValue === ''?
 <>
   <Banner/>
