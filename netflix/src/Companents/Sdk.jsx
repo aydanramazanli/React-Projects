@@ -100,6 +100,16 @@ class SDK {
     }
    
   }
+
+  async editName(id, data){
+    try {
+      const req= await this.instance.put(`/list/${id}`, data);
+      return req.data
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default SDK;

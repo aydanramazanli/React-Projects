@@ -3,6 +3,7 @@ import "..//Css/MovieList.css";
 import Dark from "./Context";
 import SingleMovie from "./SingleMovie";
 import shortid from "shortid";
+import {Link} from "react-router-dom"
 
 const style = {
   width: "1200px",
@@ -42,7 +43,7 @@ export default function Movie({ name, results, list_id }) {
   return (
     <div className="movies-section">
       <div className=" box-border	overflow-hidden">
-        <div className="py-2">
+        <div className="py-2 flex items-center">
           <h2
             className="text-gray-50 text-2xl font-bold my-3"
             style={
@@ -51,6 +52,16 @@ export default function Movie({ name, results, list_id }) {
           >
             {name}
           </h2>
+          <Link to={{
+            pathname: "/CategoryEdit",
+            state: { list_id: list_id }
+            }}>
+          <div className=" text-red-600 mx-4">
+          <i class="far fa-edit"></i>
+          </div>
+          </Link>
+         
+        
         </div>
         <div
           style={{

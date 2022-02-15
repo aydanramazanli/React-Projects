@@ -5,6 +5,7 @@ import Home from "./Companents/Home"
 import Navbar from "./Companents/Navbar";
 import CreateList from './Companents/CreateList'
 import Footer from "./Companents/Footer";
+import CategoryEdit from './Companents/CategoryEdit'
 import { DarkModeProvider } from "./Companents/Context";
 import Detail from "./Companents/Detail";
 import Register from "./Companents/Registration/Register";
@@ -98,6 +99,9 @@ function App() {
             </Route>
             <Route path="/CreateList" exact>
               <CreateList/>
+            </Route>
+            <Route path="/CategoryEdit">
+              <CategoryEdit/>
             </Route>
           </Switch>
           <Footer />
