@@ -10,9 +10,9 @@ class SDK {
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2MzU5NzU4MzYsImF1ZCI6IjI4NWExMDdmMGM5MmNmZGE0NjdkYjIyMWNjYzUwMmY3IiwianRpIjoiMzY4NzEzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCIsImFwaV93cml0ZSJdLCJ2ZXJzaW9uIjoxLCJzdWIiOiI1ZjE5ODAyNGE2ZDkzMTAwMzc4NzA1MmYifQ.ZP8HlEcAthUMlIThvRa-keAxFBkIZ24fL1p_jiFWk_U",
       },
       params: {
-        api_key: "285a107f0c92cfda467db221ccc502f7",
+        api_key: "579fa79d34e501aae2fefaae5e307ee0",
         access_tokken:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2MzU5NzU4MzYsImF1ZCI6IjI4NWExMDdmMGM5MmNmZGE0NjdkYjIyMWNjYzUwMmY3IiwianRpIjoiMzY4NzEzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCIsImFwaV93cml0ZSJdLCJ2ZXJzaW9uIjoxLCJzdWIiOiI1ZjE5ODAyNGE2ZDkzMTAwMzc4NzA1MmYifQ.ZP8HlEcAthUMlIThvRa-keAxFBkIZ24fL1p_jiFWk_U",
+          "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NzlmYTc5ZDM0ZTUwMWFhZTJmZWZhYWU1ZTMwN2VlMCIsInN1YiI6IjYxZDQ2NWNiNDk3NTYwMDA0MjI0Y2E1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6dvaL-KW6xPsuwh_ud6lCZJf-5gTfCNHF3STbhMoS_w",
       },
     });
 
@@ -22,7 +22,7 @@ class SDK {
         "Content-Type": "application/json;charset=utf-8",
       },
       params: {
-        api_key: "285a107f0c92cfda467db221ccc502f7",
+        api_key: "579fa79d34e501aae2fefaae5e307ee0",
       },
     });
     this.accountId = "5f198024a6d931003787052f";

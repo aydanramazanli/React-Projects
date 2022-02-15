@@ -80,8 +80,8 @@ function App() {
         <div
           style={
             dark
-              ? { backgroundColor: "#000", color: "#fff" }
-              : { backgroundColor: "#fff", color: "#000" }
+              ? { backgroundColor: "#222831", color: "#fff" }
+              : { backgroundColor: "#fff", color: "#222831" }
           }
          
         >

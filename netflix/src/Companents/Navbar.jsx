@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import profil from "../Images/pp-img.png";
 import logo from "../Images/logo.png";
 import "../Css/Navbar.css";
@@ -12,16 +12,19 @@ function Navbar() {
   const location = useLocation();
   const DarkMood= useContext(Dark)
 
-  const LogOut = useCallback(() => {
-    if (local !== null) {
-        return <span onClick={remove} className="logout">Log Out</span>
+
+  const remove=() =>{
+    if(local!== null){
+      window.localStorage.removeItem("data");
     }
-}, [local])
-
-
-const remove=() =>{
-    window.localStorage.removeItem("data");
+    
 }
+
+//   const LogOut =() => {
+//     if (local !== null) {
+//         return <span onClick={remove()} className="logout">Log Out</span>
+//     }
+// }
 
 
   useEffect(() => {
@@ -48,7 +51,7 @@ const remove=() =>{
           </Link>
           </div>
           <div className="flex w-32 justify-between">
-          <div  onClick={() => DarkMood.dark===false? DarkMood.setDark(true): DarkMood.setDark(false)} style={DarkMood.dark===false? {color: "#497285"}:{color: "#fff"}} className="text-center w-32 text-xl">
+          <div  onClick={() => DarkMood.dark===false? DarkMood.setDark(true): DarkMood.setDark(false)} style={DarkMood.dark===false? {color: "#222831"}:{color: "#fff"}} className="text-center w-32 text-xl">
             <i className="fas fa-moon"></i>
           </div>
           <div 
@@ -91,13 +94,9 @@ const remove=() =>{
                     <li className="my-2 text-base">
                       <Link to="/">Add List</Link>
                     </li>
-                    <li>
-                      <div
-                        className="logOut text-base"
-                        style={{ cursor: "pointer" }}
-                      >
-                  {LogOut}
-                      </div>
+                    <li className="logOut text-base"
+                        style={{ cursor: "pointer" }} onClick={remove}>
+                    Log Out
                     </li>
                   </ul>
                 </div>
