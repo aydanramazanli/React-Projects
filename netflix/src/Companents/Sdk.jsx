@@ -86,6 +86,20 @@ class SDK {
       console.log(error);
     }
   }
+
+  async removeItem(id, data){
+    if(window.confirm("Are you sure deleted movie ?")){
+      try {
+        const req = await this.instance.delete(`/list/${id}/items`, {
+          data:data
+        });
+        return req.data;
+      } catch (error) {
+        console.log(error);
+      }
+    }
+   
+  }
 }
 
 export default SDK;
