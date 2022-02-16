@@ -1,7 +1,9 @@
-import React, {useRef} from 'react'
+import React, {useRef, useContext} from 'react'
 import SDK from './Sdk'
+import Dark from './Context'
 
 export default function CreateList() {
+    const DarkMood= useContext(Dark)
     const sdk = new SDK();
     const inputRef= useRef(null)
     const descRef=useRef(null)
@@ -34,12 +36,12 @@ return (
 <div className="w-72 ">
 <form action="" onSubmit={addList}>
     <div className="flex flex-col ">
-        <label className="my-3 mx-auto font-medium text-xl">List Name</label>
-        <input ref={inputRef} type="text" placeholder="Enter list name" className="p-2 rounded outline-none text-gray-800 font-semibold" />
+        <label style={DarkMood.dark===false? {color: "#222831"}:{color: "#fff"}} className="my-3 mx-auto font-medium text-xl">List Name</label>
+        <input style={DarkMood.dark===false? {background: "#222831",color:'white'}:{background: "#fff",color:'#222831'}} ref={inputRef} type="text" placeholder="Enter list name" className="p-2 rounded outline-none text-gray-800 font-semibold" />
     </div>
     <div className="flex flex-col ">
-        <label className="my-3 mx-auto font-medium text- xl">Description</label>
-      <textarea ref={descRef} name="" id="" cols="20" rows="4" placeholder="Enter description" className="p-2 rounded outline-none text-gray-800 font-semibold"></textarea>
+        <label style={DarkMood.dark===false? {color: "#222831"}:{color: "#fff"}} className="my-3 mx-auto font-medium text- xl">Description</label>
+      <textarea style={DarkMood.dark===false? {background: "#222831",color:'white'}:{background: "#fff",color:'#222831'}} ref={descRef} name="" id="" cols="20" rows="4" placeholder="Enter description" className="p-2 rounded outline-none text-gray-800 font-semibold"></textarea>
     </div>
     <div>
         

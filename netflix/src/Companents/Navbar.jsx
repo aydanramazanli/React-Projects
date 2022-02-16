@@ -91,11 +91,11 @@ function Navbar() {
                           : " "}
                       </h2>
                     </li>
-                    <li className="my-2 text-base">
-                      <Link to="/">Add List</Link>
+                    <li className="my-2 text-base cursor-pointer">
+                      <Link to={"/CreateList"}>Add List</Link>
                     </li>
-                    <li className="logOut text-base"
-                        style={{ cursor: "pointer" }} onClick={remove}>
+                    <li className="logOut text-base cursor-pointer"
+                         onClick={remove}>
                     Log Out
                     </li>
                   </ul>
