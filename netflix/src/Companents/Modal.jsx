@@ -32,7 +32,7 @@ export default function Modal({ closeModal, media_type, id, addData }) {
   };
   //movies value and
   const Lists = useMemo(() => {
-    return addData.results.map((e) => {
+    return addData?.results.map((e) => {
       return (
         <option key={shortid.generate()} value={e.id}>
           {e.name}
