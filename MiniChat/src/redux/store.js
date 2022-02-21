@@ -4,6 +4,6 @@ import { MessageSlice } from './reducers/MessageSlice';
 
 export const store = configureStore({
   reducer: {
-    Message:MessageSlice.reducer
+    MessageStore:MessageSlice.reducer
   },
 });

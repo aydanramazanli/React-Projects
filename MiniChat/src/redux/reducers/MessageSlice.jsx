@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit'
 
 
 const state = {
-    message:[]
+    messages:[]
 }
 
 
@@ -12,11 +12,14 @@ export const MessageSlice = createSlice({
     initialState:state,
     reducers:{
         addMessage:(state, action)=>{
-            state.message.push(action.payload)
+            state.messages.push(action.payload)
+        },
+        messageReading:(state, action)=>{
+            state.messages.filter((m)=> !m.read).forEach((m) => m.read = true)
         }
     }
 })
 
 
 
-export const {addMessage} = MessageSlice.actions
+export const {addMessage, messageReading} = MessageSlice.actions
