@@ -57,7 +57,7 @@ export default function Movie({ name, results, list_id }) {
             state: { list_id: list_id }
             }}>
           <div className=" text-red-600 mx-4">
-          <i class="far fa-edit"></i>
+          <i className="far fa-edit"></i>
           </div>
           </Link>
          

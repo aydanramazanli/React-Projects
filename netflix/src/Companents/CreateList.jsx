@@ -18,8 +18,7 @@ e.preventDefault()
    }
    if(myList){
     try{
-        const data = await sdk.postList(myList)
-        console.log(data)
+        await sdk.postList(myList)
     }
     catch(error){
         console.log(error)

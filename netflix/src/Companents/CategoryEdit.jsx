@@ -19,7 +19,7 @@ export default function CategoryEdit() {
             name: c_name
         }
         try {
-            const data = await sdk.editName(listId, datas)
+            await sdk.editName(listId, datas)
 
         } catch (error) {
             console.log(error)

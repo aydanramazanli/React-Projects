@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import "../Css/MovieList.css";
 import Movie from "./Movie";
 import SDK from './Sdk'

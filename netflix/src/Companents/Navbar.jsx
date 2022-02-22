@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import profil from "../Images/pp-img.png";
 import logo from "../Images/logo.png";
 import "../Css/Navbar.css";
@@ -13,24 +13,18 @@ function Navbar() {
   const DarkMood= useContext(Dark)
 
 
-  const remove=() =>{
-    if(local!== null){
+  const LogOut = useCallback(() => {
+    if (local !== null) {
       window.localStorage.removeItem("data");
+      console.log("WTH?")
     }
-    
-}
-
-//   const LogOut =() => {
-//     if (local !== null) {
-//         return <span onClick={remove()} className="logout">Log Out</span>
-//     }
-// }
+}, [local])
 
 
-  useEffect(() => {
+useEffect(() => {
     const locals = JSON.parse(localStorage.getItem("data"));
-    setLocal(locals);
-  }, [location.pathname]);
+    setLocal(locals)
+}, [location.pathname])
 
   return (
     <div className="fixed w-full navbar z-50">
@@ -94,9 +88,8 @@ function Navbar() {
                     <li className="my-2 text-base cursor-pointer">
                       <Link to={"/CreateList"}>Add List</Link>
                     </li>
-                    <li className="logOut text-base cursor-pointer"
-                         onClick={remove}>
-                    Log Out
+                    <li className="logOut text-base cursor-pointer "> 
+                  {LogOut}  Log Out
                     </li>
                   </ul>
                 </div>
