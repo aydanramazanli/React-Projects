@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       {/* navbar */}
-        <nav className="flex bg-red-400 justify-around mb-10 p-5 text-neutral-100 font-semibold">
+        <nav className="flex bg-cyan-600 justify-around mb-10 p-5 text-neutral-100 font-semibold">
           <Link to="/">
             Player 01
           </Link>
